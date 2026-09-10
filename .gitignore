@@ -216,3 +216,6 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# sclog 本地文件日志（验证脚本运行时生成）
+logs/

@@ -1,0 +1,45 @@
+[build-system]
+requires = ["hatchling>=1.25"]
+build-backend = "hatchling.build"
+
+[project]
+name = "alt_celery3_contract"
+version = "0.1.0"
+description = "alt_celery3 跨服务任务契约包：纯声明性质的任务名、入参 Schema 与契约函数"
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.13"
+authors = [{ name = "alt_celery3_contract" }]
+dependencies = [
+    "pydantic>=2.8,<3",
+]
+
+[project.optional-dependencies]
+dev = [
+    "ruff>=0.6",
+    "mypy>=1.11",
+    "pytest>=8.0",
+]
+docs = [
+    "sphinx>=8.0",
+    "myst-parser>=4.0",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/alt_celery3_contract"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py313"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B", "SIM"]
+
+[tool.mypy]
+python_version = "3.13"
+strict = false
+
+# verify_contracts.py 运行期动态注入源项目路径，静态分析无法解析
+[[tool.mypy.overrides]]
+module = ["app"]
+ignore_missing_imports = true

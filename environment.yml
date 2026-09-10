@@ -1,0 +1,9 @@
+# Conda 环境配置（alt_celery3_contract 契约包）
+name: alt_celery3_contract
+channels:
+  - conda-forge
+dependencies:
+  - python>=3.13
+  - pip
+  - pip:
+      - -e .[dev,docs]
