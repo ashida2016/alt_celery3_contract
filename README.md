@@ -31,7 +31,10 @@
 ## 安装
 
 ```bash
-# pip（推荐 editable 模式）
+# 从 GitHub 安装（推荐，alt_celery3 项目的依赖即指向此地址）
+pip install "alt_celery3_contract @ git+https://github.com/ashida2016/alt_celery3_contract.git@ver0.1.0"
+
+# 本地 editable 模式（开发契约包本身）
 pip install -e .
 
 # conda
