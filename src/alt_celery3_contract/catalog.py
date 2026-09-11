@@ -99,6 +99,12 @@ TASK_CATALOG: dict[str, TaskCatalogEntry] = {
         payload_model=schemas.SimuTaskPayload,
         description="模拟指定年份的本科毕业，完成后学生状态 20→30（已毕业）。",
     ),
+    TaskName.SIMU_SCHOOL_YEAR.value: TaskCatalogEntry(
+        name=TaskName.SIMU_SCHOOL_YEAR.value,
+        contract=definitions.simu_school_year,
+        payload_model=schemas.SimuSchoolYearPayload,
+        description="模拟学年例行操作：依次编排高考/录取/日常考试/毕业四个任务。",
+    ),
 }
 
 __all__ = ["TASK_CATALOG", "TaskCatalogEntry"]

@@ -21,3 +21,4 @@ class TaskName(StrEnum):
     SIMU_ADMISSION = "tasks.simu_admission"
     SIMU_EXAM = "tasks.simu_exam"
     SIMU_GRADUATE = "tasks.simu_graduate"
+    SIMU_SCHOOL_YEAR = "tasks.simu_school_year"

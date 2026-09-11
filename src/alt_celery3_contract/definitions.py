@@ -201,3 +201,26 @@ def simu_graduate(
         NotImplementedError: 契约函数不包含实现。
     """
     raise NotImplementedError
+
+
+def simu_school_year(
+    year: int,
+    stage_timeout: float = 600.0,
+    chunk_size: int = 50_000,
+    max_workers: int = 8,
+) -> dict:
+    """模拟学年例行操作：依次编排高考/录取/日常考试/毕业四个任务。
+
+    Args:
+        year: 学年起始年份（graduate 阶段使用 year+3）。
+        stage_timeout: 单个阶段等待结果的最长秒数（默认 600）。
+        chunk_size: ID 窗口大小（默认 50000）。
+        max_workers: 并发线程数（默认 8）。
+
+    Returns:
+        各阶段执行摘要的汇总字典。
+
+    Raises:
+        NotImplementedError: 契约函数不包含实现。
+    """
+    raise NotImplementedError

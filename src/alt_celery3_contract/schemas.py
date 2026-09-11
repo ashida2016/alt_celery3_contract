@@ -67,3 +67,26 @@ class SimuTaskPayload(BaseModel):
     max_workers: int = Field(
         default=8, ge=1, le=32, description="并发线程数"
     )
+
+
+class SimuSchoolYearPayload(BaseModel):
+    """学年例行操作编排任务入参（tasks.simu_school_year）。
+
+    Attributes:
+        year: 学年起始年份（编排 ncee/admission/exam 用 year，
+            graduate 用 year+3）。
+        stage_timeout: 单个阶段等待结果的最长秒数。
+        chunk_size: ID 窗口大小。
+        max_workers: 并发线程数。
+    """
+
+    year: int = Field(description="学年起始年份")
+    stage_timeout: float = Field(
+        default=600.0, gt=0, description="单个阶段等待结果的最长秒数"
+    )
+    chunk_size: int = Field(
+        default=50_000, gt=0, description="ID 窗口大小"
+    )
+    max_workers: int = Field(
+        default=8, ge=1, le=32, description="并发线程数"
+    )

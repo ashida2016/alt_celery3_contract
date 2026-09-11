@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "alt_celery3_contract"
-version = "0.1.0"
+version = "0.1.1"
 description = "alt_celery3 跨服务任务契约包：纯声明性质的任务名、入参 Schema 与契约函数"
 readme = "README.md"
 license = { file = "LICENSE" }
